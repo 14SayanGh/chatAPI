@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: chatAPI
+
+  config:
+    import: file:./.env[.properties]
+
+  autoconfigure:
+    exclude:
+      - org.springframework.ai.model.openai.autoconfigure.OpenAiAudioSpeechAutoConfiguration
+      - org.springframework.ai.model.openai.autoconfigure.OpenAiAudioTranscriptionAutoConfiguration
+      - org.springframework.ai.model.openai.autoconfigure.OpenAiEmbeddingAutoConfiguration
+      - org.springframework.ai.model.openai.autoconfigure.OpenAiImageAutoConfiguration
+      - org.springframework.ai.model.openai.autoconfigure.OpenAiModerationAutoConfiguration
+
+  ai:
+    openai:
+      chat:
+        base-url: https://ollama.com/v1
+        api-key: ${OLLAMA_API_KEY}
+        model: gemma4:31b
+
+server:
+  port: 8081
