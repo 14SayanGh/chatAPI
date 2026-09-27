@@ -13,6 +13,7 @@ ChatAPI is a Spring Boot REST API that sends chat prompts to an Ollama Cloud mod
 ## Configuration
 
 Create a `.env` file in the project root. This file is ignored by Git.
+Each developer or deployment environment must create this file separately.
 
 ```properties
 OLLAMA_API_KEY=your_ollama_api_key
@@ -73,7 +74,7 @@ src/main/java/com/sayan/chatapi/
 
 The project uses the Red Hat Java formatter in VS Code with format on save enabled.
 
-## Versioning
+## Version history
 
 This project follows semantic versioning:
 
@@ -81,4 +82,22 @@ This project follows semantic versioning:
 MAJOR.MINOR.PATCH
 ```
 
-Current version: `0.1.0`.
+### `0.1.0` - Initial release
+
+- Added Spring Boot chat REST API.
+- Added Ollama Cloud integration through the OpenAI-compatible API.
+- Added `/api/hello` health-check endpoint.
+- Added `/api/chat` endpoint with JSON response DTO.
+- Added local `.env` configuration for the Ollama API key.
+
+### Future release template
+
+```markdown
+### `0.2.0` - Short release description
+
+- Added:
+- Changed:
+- Fixed:
+```
+
+When releasing a new version, update both the `<version>` in `pom.xml` and this version history.
